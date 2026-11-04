@@ -1,0 +1,1748 @@
+[
+ {
+  "code": "AFG",
+  "cca2": "AF",
+  "name": "Afghanistan",
+  "capital": "Kabul",
+  "lat": 34.52,
+  "lng": 69.18,
+  "region": "Asia"
+ },
+ {
+  "code": "ALB",
+  "cca2": "AL",
+  "name": "Albania",
+  "capital": "Tirana",
+  "lat": 41.33,
+  "lng": 19.82,
+  "region": "Europe"
+ },
+ {
+  "code": "DZA",
+  "cca2": "DZ",
+  "name": "Algeria",
+  "capital": "Algiers",
+  "lat": 36.77,
+  "lng": 3.05,
+  "region": "Africa"
+ },
+ {
+  "code": "AND",
+  "cca2": "AD",
+  "name": "Andorra",
+  "capital": "Andorra la Vella",
+  "lat": 42.51,
+  "lng": 1.52,
+  "region": "Europe"
+ },
+ {
+  "code": "AGO",
+  "cca2": "AO",
+  "name": "Angola",
+  "capital": "Luanda",
+  "lat": -8.84,
+  "lng": 13.23,
+  "region": "Africa"
+ },
+ {
+  "code": "ATG",
+  "cca2": "AG",
+  "name": "Antigua and Barbuda",
+  "capital": "Saint John's",
+  "lat": 17.12,
+  "lng": -61.85,
+  "region": "Americas"
+ },
+ {
+  "code": "ARG",
+  "cca2": "AR",
+  "name": "Argentina",
+  "capital": "Buenos Aires",
+  "lat": -34.6,
+  "lng": -58.4,
+  "region": "Americas"
+ },
+ {
+  "code": "ARM",
+  "cca2": "AM",
+  "name": "Armenia",
+  "capital": "Yerevan",
+  "lat": 40.18,
+  "lng": 44.51,
+  "region": "Asia"
+ },
+ {
+  "code": "AUS",
+  "cca2": "AU",
+  "name": "Australia",
+  "capital": "Canberra",
+  "lat": -35.28,
+  "lng": 149.13,
+  "region": "Oceania"
+ },
+ {
+  "code": "AUT",
+  "cca2": "AT",
+  "name": "Austria",
+  "capital": "Vienna",
+  "lat": 48.2,
+  "lng": 16.36,
+  "region": "Europe"
+ },
+ {
+  "code": "AZE",
+  "cca2": "AZ",
+  "name": "Azerbaijan",
+  "capital": "Baku",
+  "lat": 40.4,
+  "lng": 49.86,
+  "region": "Asia"
+ },
+ {
+  "code": "BHS",
+  "cca2": "BS",
+  "name": "Bahamas",
+  "capital": "Nassau",
+  "lat": 25.08,
+  "lng": -77.35,
+  "region": "Americas"
+ },
+ {
+  "code": "BHR",
+  "cca2": "BH",
+  "name": "Bahrain",
+  "capital": "Manama",
+  "lat": 26.24,
+  "lng": 50.58,
+  "region": "Asia"
+ },
+ {
+  "code": "BGD",
+  "cca2": "BD",
+  "name": "Bangladesh",
+  "capital": "Dhaka",
+  "lat": 23.73,
+  "lng": 90.41,
+  "region": "Asia"
+ },
+ {
+  "code": "BRB",
+  "cca2": "BB",
+  "name": "Barbados",
+  "capital": "Bridgetown",
+  "lat": 13.1,
+  "lng": -59.62,
+  "region": "Americas"
+ },
+ {
+  "code": "BLR",
+  "cca2": "BY",
+  "name": "Belarus",
+  "capital": "Minsk",
+  "lat": 53.9,
+  "lng": 27.56,
+  "region": "Europe"
+ },
+ {
+  "code": "BEL",
+  "cca2": "BE",
+  "name": "Belgium",
+  "capital": "Brussels",
+  "lat": 50.84,
+  "lng": 4.33,
+  "region": "Europe"
+ },
+ {
+  "code": "BLZ",
+  "cca2": "BZ",
+  "name": "Belize",
+  "capital": "Belmopan",
+  "lat": 17.25,
+  "lng": -88.77,
+  "region": "Americas"
+ },
+ {
+  "code": "BEN",
+  "cca2": "BJ",
+  "name": "Benin",
+  "capital": "Porto-Novo",
+  "lat": 6.48,
+  "lng": 2.62,
+  "region": "Africa"
+ },
+ {
+  "code": "BTN",
+  "cca2": "BT",
+  "name": "Bhutan",
+  "capital": "Thimphu",
+  "lat": 27.47,
+  "lng": 89.64,
+  "region": "Asia"
+ },
+ {
+  "code": "BOL",
+  "cca2": "BO",
+  "name": "Bolivia",
+  "capital": "Sucre",
+  "lat": -19.04,
+  "lng": -65.26,
+  "region": "Americas"
+ },
+ {
+  "code": "BIH",
+  "cca2": "BA",
+  "name": "Bosnia and Herzegovina",
+  "capital": "Sarajevo",
+  "lat": 43.85,
+  "lng": 18.38,
+  "region": "Europe"
+ },
+ {
+  "code": "BWA",
+  "cca2": "BW",
+  "name": "Botswana",
+  "capital": "Gaborone",
+  "lat": -24.65,
+  "lng": 25.91,
+  "region": "Africa"
+ },
+ {
+  "code": "BRA",
+  "cca2": "BR",
+  "name": "Brazil",
+  "capital": "Brasília",
+  "lat": -15.78,
+  "lng": -47.92,
+  "region": "Americas"
+ },
+ {
+  "code": "BRN",
+  "cca2": "BN",
+  "name": "Brunei",
+  "capital": "Bandar Seri Begawan",
+  "lat": 4.88,
+  "lng": 114.93,
+  "region": "Asia"
+ },
+ {
+  "code": "BGR",
+  "cca2": "BG",
+  "name": "Bulgaria",
+  "capital": "Sofia",
+  "lat": 42.69,
+  "lng": 23.31,
+  "region": "Europe"
+ },
+ {
+  "code": "BFA",
+  "cca2": "BF",
+  "name": "Burkina Faso",
+  "capital": "Ouagadougou",
+  "lat": 12.37,
+  "lng": -1.53,
+  "region": "Africa"
+ },
+ {
+  "code": "BDI",
+  "cca2": "BI",
+  "name": "Burundi",
+  "capital": "Gitega",
+  "lat": -3.43,
+  "lng": 29.92,
+  "region": "Africa"
+ },
+ {
+  "code": "KHM",
+  "cca2": "KH",
+  "name": "Cambodia",
+  "capital": "Phnom Penh",
+  "lat": 11.55,
+  "lng": 104.91,
+  "region": "Asia"
+ },
+ {
+  "code": "CMR",
+  "cca2": "CM",
+  "name": "Cameroon",
+  "capital": "Yaoundé",
+  "lat": 3.87,
+  "lng": 11.51,
+  "region": "Africa"
+ },
+ {
+  "code": "CAN",
+  "cca2": "CA",
+  "name": "Canada",
+  "capital": "Ottawa",
+  "lat": 45.42,
+  "lng": -75.7,
+  "region": "Americas"
+ },
+ {
+  "code": "CPV",
+  "cca2": "CV",
+  "name": "Cape Verde",
+  "capital": "Praia",
+  "lat": 14.92,
+  "lng": -23.52,
+  "region": "Africa"
+ },
+ {
+  "code": "CAF",
+  "cca2": "CF",
+  "name": "Central African Republic",
+  "capital": "Bangui",
+  "lat": 4.37,
+  "lng": 18.56,
+  "region": "Africa"
+ },
+ {
+  "code": "TCD",
+  "cca2": "TD",
+  "name": "Chad",
+  "capital": "N'Djamena",
+  "lat": 12.12,
+  "lng": 15.05,
+  "region": "Africa"
+ },
+ {
+  "code": "CHL",
+  "cca2": "CL",
+  "name": "Chile",
+  "capital": "Santiago",
+  "lat": -33.45,
+  "lng": -70.67,
+  "region": "Americas"
+ },
+ {
+  "code": "CHN",
+  "cca2": "CN",
+  "name": "China",
+  "capital": "Beijing",
+  "lat": 39.93,
+  "lng": 116.39,
+  "region": "Asia"
+ },
+ {
+  "code": "COL",
+  "cca2": "CO",
+  "name": "Colombia",
+  "capital": "Bogotá",
+  "lat": 4.6,
+  "lng": -74.09,
+  "region": "Americas"
+ },
+ {
+  "code": "COM",
+  "cca2": "KM",
+  "name": "Comoros",
+  "capital": "Moroni",
+  "lat": -11.7,
+  "lng": 43.24,
+  "region": "Africa"
+ },
+ {
+  "code": "COG",
+  "cca2": "CG",
+  "name": "Congo",
+  "capital": "Brazzaville",
+  "lat": -4.26,
+  "lng": 15.28,
+  "region": "Africa"
+ },
+ {
+  "code": "CRI",
+  "cca2": "CR",
+  "name": "Costa Rica",
+  "capital": "San José",
+  "lat": 9.94,
+  "lng": -84.09,
+  "region": "Americas"
+ },
+ {
+  "code": "HRV",
+  "cca2": "HR",
+  "name": "Croatia",
+  "capital": "Zagreb",
+  "lat": 45.8,
+  "lng": 16,
+  "region": "Europe"
+ },
+ {
+  "code": "CUB",
+  "cca2": "CU",
+  "name": "Cuba",
+  "capital": "Havana",
+  "lat": 23.13,
+  "lng": -82.37,
+  "region": "Americas"
+ },
+ {
+  "code": "CYP",
+  "cca2": "CY",
+  "name": "Cyprus",
+  "capital": "Nicosia",
+  "lat": 35.17,
+  "lng": 33.37,
+  "region": "Europe"
+ },
+ {
+  "code": "CZE",
+  "cca2": "CZ",
+  "name": "Czechia",
+  "capital": "Prague",
+  "lat": 50.09,
+  "lng": 14.46,
+  "region": "Europe"
+ },
+ {
+  "code": "DNK",
+  "cca2": "DK",
+  "name": "Denmark",
+  "capital": "Copenhagen",
+  "lat": 55.68,
+  "lng": 12.56,
+  "region": "Europe"
+ },
+ {
+  "code": "DJI",
+  "cca2": "DJ",
+  "name": "Djibouti",
+  "capital": "Djibouti",
+  "lat": 11.6,
+  "lng": 43.15,
+  "region": "Africa"
+ },
+ {
+  "code": "DMA",
+  "cca2": "DM",
+  "name": "Dominica",
+  "capital": "Roseau",
+  "lat": 15.3,
+  "lng": -61.39,
+  "region": "Americas"
+ },
+ {
+  "code": "DOM",
+  "cca2": "DO",
+  "name": "Dominican Republic",
+  "capital": "Santo Domingo",
+  "lat": 18.47,
+  "lng": -69.9,
+  "region": "Americas"
+ },
+ {
+  "code": "COD",
+  "cca2": "CD",
+  "name": "DR Congo",
+  "capital": "Kinshasa",
+  "lat": -4.33,
+  "lng": 15.31,
+  "region": "Africa"
+ },
+ {
+  "code": "ECU",
+  "cca2": "EC",
+  "name": "Ecuador",
+  "capital": "Quito",
+  "lat": -0.21,
+  "lng": -78.5,
+  "region": "Americas"
+ },
+ {
+  "code": "EGY",
+  "cca2": "EG",
+  "name": "Egypt",
+  "capital": "Cairo",
+  "lat": 30.05,
+  "lng": 31.25,
+  "region": "Africa"
+ },
+ {
+  "code": "SLV",
+  "cca2": "SV",
+  "name": "El Salvador",
+  "capital": "San Salvador",
+  "lat": 13.71,
+  "lng": -89.2,
+  "region": "Americas"
+ },
+ {
+  "code": "GNQ",
+  "cca2": "GQ",
+  "name": "Equatorial Guinea",
+  "capital": "Malabo",
+  "lat": 3.75,
+  "lng": 8.78,
+  "region": "Africa"
+ },
+ {
+  "code": "ERI",
+  "cca2": "ER",
+  "name": "Eritrea",
+  "capital": "Asmara",
+  "lat": 15.33,
+  "lng": 38.93,
+  "region": "Africa"
+ },
+ {
+  "code": "EST",
+  "cca2": "EE",
+  "name": "Estonia",
+  "capital": "Tallinn",
+  "lat": 59.43,
+  "lng": 24.73,
+  "region": "Europe"
+ },
+ {
+  "code": "SWZ",
+  "cca2": "SZ",
+  "name": "Eswatini",
+  "capital": "Lobamba",
+  "lat": -26.47,
+  "lng": 31.2,
+  "region": "Africa"
+ },
+ {
+  "code": "ETH",
+  "cca2": "ET",
+  "name": "Ethiopia",
+  "capital": "Addis Ababa",
+  "lat": 9.04,
+  "lng": 38.7,
+  "region": "Africa"
+ },
+ {
+  "code": "FJI",
+  "cca2": "FJ",
+  "name": "Fiji",
+  "capital": "Suva",
+  "lat": -18.13,
+  "lng": 178.44,
+  "region": "Oceania"
+ },
+ {
+  "code": "FIN",
+  "cca2": "FI",
+  "name": "Finland",
+  "capital": "Helsinki",
+  "lat": 60.18,
+  "lng": 24.93,
+  "region": "Europe"
+ },
+ {
+  "code": "FRA",
+  "cca2": "FR",
+  "name": "France",
+  "capital": "Paris",
+  "lat": 48.87,
+  "lng": 2.33,
+  "region": "Europe"
+ },
+ {
+  "code": "GAB",
+  "cca2": "GA",
+  "name": "Gabon",
+  "capital": "Libreville",
+  "lat": 0.39,
+  "lng": 9.46,
+  "region": "Africa"
+ },
+ {
+  "code": "GMB",
+  "cca2": "GM",
+  "name": "Gambia",
+  "capital": "Banjul",
+  "lat": 13.45,
+  "lng": -16.59,
+  "region": "Africa"
+ },
+ {
+  "code": "GEO",
+  "cca2": "GE",
+  "name": "Georgia",
+  "capital": "Tbilisi",
+  "lat": 41.73,
+  "lng": 44.79,
+  "region": "Asia"
+ },
+ {
+  "code": "DEU",
+  "cca2": "DE",
+  "name": "Germany",
+  "capital": "Berlin",
+  "lat": 52.52,
+  "lng": 13.4,
+  "region": "Europe"
+ },
+ {
+  "code": "GHA",
+  "cca2": "GH",
+  "name": "Ghana",
+  "capital": "Accra",
+  "lat": 5.55,
+  "lng": -0.22,
+  "region": "Africa"
+ },
+ {
+  "code": "GRC",
+  "cca2": "GR",
+  "name": "Greece",
+  "capital": "Athens",
+  "lat": 37.99,
+  "lng": 23.73,
+  "region": "Europe"
+ },
+ {
+  "code": "GRD",
+  "cca2": "GD",
+  "name": "Grenada",
+  "capital": "St. George's",
+  "lat": 12.06,
+  "lng": -61.75,
+  "region": "Americas"
+ },
+ {
+  "code": "GTM",
+  "cca2": "GT",
+  "name": "Guatemala",
+  "capital": "Guatemala City",
+  "lat": 14.62,
+  "lng": -90.53,
+  "region": "Americas"
+ },
+ {
+  "code": "GIN",
+  "cca2": "GN",
+  "name": "Guinea",
+  "capital": "Conakry",
+  "lat": 9.53,
+  "lng": -13.68,
+  "region": "Africa"
+ },
+ {
+  "code": "GNB",
+  "cca2": "GW",
+  "name": "Guinea-Bissau",
+  "capital": "Bissau",
+  "lat": 11.87,
+  "lng": -15.6,
+  "region": "Africa"
+ },
+ {
+  "code": "GUY",
+  "cca2": "GY",
+  "name": "Guyana",
+  "capital": "Georgetown",
+  "lat": 6.8,
+  "lng": -58.17,
+  "region": "Americas"
+ },
+ {
+  "code": "HTI",
+  "cca2": "HT",
+  "name": "Haiti",
+  "capital": "Port-au-Prince",
+  "lat": 18.54,
+  "lng": -72.34,
+  "region": "Americas"
+ },
+ {
+  "code": "HND",
+  "cca2": "HN",
+  "name": "Honduras",
+  "capital": "Tegucigalpa",
+  "lat": 14.1,
+  "lng": -87.22,
+  "region": "Americas"
+ },
+ {
+  "code": "HUN",
+  "cca2": "HU",
+  "name": "Hungary",
+  "capital": "Budapest",
+  "lat": 47.5,
+  "lng": 19.08,
+  "region": "Europe"
+ },
+ {
+  "code": "ISL",
+  "cca2": "IS",
+  "name": "Iceland",
+  "capital": "Reykjavik",
+  "lat": 64.15,
+  "lng": -21.95,
+  "region": "Europe"
+ },
+ {
+  "code": "IND",
+  "cca2": "IN",
+  "name": "India",
+  "capital": "New Delhi",
+  "lat": 28.6,
+  "lng": 77.2,
+  "region": "Asia"
+ },
+ {
+  "code": "IDN",
+  "cca2": "ID",
+  "name": "Indonesia",
+  "capital": "Jakarta",
+  "lat": -6.17,
+  "lng": 106.83,
+  "region": "Asia"
+ },
+ {
+  "code": "IRN",
+  "cca2": "IR",
+  "name": "Iran",
+  "capital": "Tehran",
+  "lat": 35.67,
+  "lng": 51.42,
+  "region": "Asia"
+ },
+ {
+  "code": "IRQ",
+  "cca2": "IQ",
+  "name": "Iraq",
+  "capital": "Baghdad",
+  "lat": 33.34,
+  "lng": 44.39,
+  "region": "Asia"
+ },
+ {
+  "code": "IRL",
+  "cca2": "IE",
+  "name": "Ireland",
+  "capital": "Dublin",
+  "lat": 53.34,
+  "lng": -6.25,
+  "region": "Europe"
+ },
+ {
+  "code": "ISR",
+  "cca2": "IL",
+  "name": "Israel",
+  "capital": "Jerusalem",
+  "lat": 31.78,
+  "lng": 35.21,
+  "region": "Asia"
+ },
+ {
+  "code": "ITA",
+  "cca2": "IT",
+  "name": "Italy",
+  "capital": "Rome",
+  "lat": 41.9,
+  "lng": 12.48,
+  "region": "Europe"
+ },
+ {
+  "code": "CIV",
+  "cca2": "CI",
+  "name": "Ivory Coast",
+  "capital": "Yamoussoukro",
+  "lat": 6.82,
+  "lng": -5.28,
+  "region": "Africa"
+ },
+ {
+  "code": "JAM",
+  "cca2": "JM",
+  "name": "Jamaica",
+  "capital": "Kingston",
+  "lat": 17.98,
+  "lng": -76.77,
+  "region": "Americas"
+ },
+ {
+  "code": "JPN",
+  "cca2": "JP",
+  "name": "Japan",
+  "capital": "Tokyo",
+  "lat": 35.69,
+  "lng": 139.75,
+  "region": "Asia"
+ },
+ {
+  "code": "JOR",
+  "cca2": "JO",
+  "name": "Jordan",
+  "capital": "Amman",
+  "lat": 31.95,
+  "lng": 35.93,
+  "region": "Asia"
+ },
+ {
+  "code": "KAZ",
+  "cca2": "KZ",
+  "name": "Kazakhstan",
+  "capital": "Astana",
+  "lat": 51.17,
+  "lng": 71.45,
+  "region": "Asia"
+ },
+ {
+  "code": "KEN",
+  "cca2": "KE",
+  "name": "Kenya",
+  "capital": "Nairobi",
+  "lat": -1.28,
+  "lng": 36.81,
+  "region": "Africa"
+ },
+ {
+  "code": "KIR",
+  "cca2": "KI",
+  "name": "Kiribati",
+  "capital": "Tarawa",
+  "lat": 1.34,
+  "lng": 173.02,
+  "region": "Oceania"
+ },
+ {
+  "code": "KWT",
+  "cca2": "KW",
+  "name": "Kuwait",
+  "capital": "Kuwait City",
+  "lat": 29.37,
+  "lng": 47.98,
+  "region": "Asia"
+ },
+ {
+  "code": "KGZ",
+  "cca2": "KG",
+  "name": "Kyrgyzstan",
+  "capital": "Bishkek",
+  "lat": 42.88,
+  "lng": 74.58,
+  "region": "Asia"
+ },
+ {
+  "code": "LAO",
+  "cca2": "LA",
+  "name": "Laos",
+  "capital": "Vientiane",
+  "lat": 17.97,
+  "lng": 102.6,
+  "region": "Asia"
+ },
+ {
+  "code": "LVA",
+  "cca2": "LV",
+  "name": "Latvia",
+  "capital": "Riga",
+  "lat": 56.95,
+  "lng": 24.1,
+  "region": "Europe"
+ },
+ {
+  "code": "LBN",
+  "cca2": "LB",
+  "name": "Lebanon",
+  "capital": "Beirut",
+  "lat": 33.87,
+  "lng": 35.51,
+  "region": "Asia"
+ },
+ {
+  "code": "LSO",
+  "cca2": "LS",
+  "name": "Lesotho",
+  "capital": "Maseru",
+  "lat": -29.32,
+  "lng": 27.48,
+  "region": "Africa"
+ },
+ {
+  "code": "LBR",
+  "cca2": "LR",
+  "name": "Liberia",
+  "capital": "Monrovia",
+  "lat": 6.31,
+  "lng": -10.8,
+  "region": "Africa"
+ },
+ {
+  "code": "LBY",
+  "cca2": "LY",
+  "name": "Libya",
+  "capital": "Tripoli",
+  "lat": 32.89,
+  "lng": 13.18,
+  "region": "Africa"
+ },
+ {
+  "code": "LIE",
+  "cca2": "LI",
+  "name": "Liechtenstein",
+  "capital": "Vaduz",
+  "lat": 47.13,
+  "lng": 9.52,
+  "region": "Europe"
+ },
+ {
+  "code": "LTU",
+  "cca2": "LT",
+  "name": "Lithuania",
+  "capital": "Vilnius",
+  "lat": 54.68,
+  "lng": 25.32,
+  "region": "Europe"
+ },
+ {
+  "code": "LUX",
+  "cca2": "LU",
+  "name": "Luxembourg",
+  "capital": "Luxembourg",
+  "lat": 49.61,
+  "lng": 6.13,
+  "region": "Europe"
+ },
+ {
+  "code": "MDG",
+  "cca2": "MG",
+  "name": "Madagascar",
+  "capital": "Antananarivo",
+  "lat": -18.91,
+  "lng": 47.51,
+  "region": "Africa"
+ },
+ {
+  "code": "MWI",
+  "cca2": "MW",
+  "name": "Malawi",
+  "capital": "Lilongwe",
+  "lat": -13.98,
+  "lng": 33.78,
+  "region": "Africa"
+ },
+ {
+  "code": "MYS",
+  "cca2": "MY",
+  "name": "Malaysia",
+  "capital": "Kuala Lumpur",
+  "lat": 3.17,
+  "lng": 101.7,
+  "region": "Asia"
+ },
+ {
+  "code": "MDV",
+  "cca2": "MV",
+  "name": "Maldives",
+  "capital": "Malé",
+  "lat": 4.17,
+  "lng": 73.5,
+  "region": "Asia"
+ },
+ {
+  "code": "MLI",
+  "cca2": "ML",
+  "name": "Mali",
+  "capital": "Bamako",
+  "lat": 12.65,
+  "lng": -8,
+  "region": "Africa"
+ },
+ {
+  "code": "MLT",
+  "cca2": "MT",
+  "name": "Malta",
+  "capital": "Valletta",
+  "lat": 35.9,
+  "lng": 14.51,
+  "region": "Europe"
+ },
+ {
+  "code": "MHL",
+  "cca2": "MH",
+  "name": "Marshall Islands",
+  "capital": "Majuro",
+  "lat": 7.1,
+  "lng": 171.38,
+  "region": "Oceania"
+ },
+ {
+  "code": "MRT",
+  "cca2": "MR",
+  "name": "Mauritania",
+  "capital": "Nouakchott",
+  "lat": 18.09,
+  "lng": -15.98,
+  "region": "Africa"
+ },
+ {
+  "code": "MUS",
+  "cca2": "MU",
+  "name": "Mauritius",
+  "capital": "Port Louis",
+  "lat": -20.17,
+  "lng": 57.5,
+  "region": "Africa"
+ },
+ {
+  "code": "MEX",
+  "cca2": "MX",
+  "name": "Mexico",
+  "capital": "Mexico City",
+  "lat": 19.44,
+  "lng": -99.13,
+  "region": "Americas"
+ },
+ {
+  "code": "FSM",
+  "cca2": "FM",
+  "name": "Micronesia",
+  "capital": "Palikir",
+  "lat": 6.92,
+  "lng": 158.15,
+  "region": "Oceania"
+ },
+ {
+  "code": "MDA",
+  "cca2": "MD",
+  "name": "Moldova",
+  "capital": "Chișinău",
+  "lat": 47.01,
+  "lng": 28.86,
+  "region": "Europe"
+ },
+ {
+  "code": "MCO",
+  "cca2": "MC",
+  "name": "Monaco",
+  "capital": "Monaco",
+  "lat": 43.74,
+  "lng": 7.41,
+  "region": "Europe"
+ },
+ {
+  "code": "MNG",
+  "cca2": "MN",
+  "name": "Mongolia",
+  "capital": "Ulaanbaatar",
+  "lat": 47.92,
+  "lng": 106.91,
+  "region": "Asia"
+ },
+ {
+  "code": "MNE",
+  "cca2": "ME",
+  "name": "Montenegro",
+  "capital": "Podgorica",
+  "lat": 42.47,
+  "lng": 19.27,
+  "region": "Europe"
+ },
+ {
+  "code": "MAR",
+  "cca2": "MA",
+  "name": "Morocco",
+  "capital": "Rabat",
+  "lat": 34.03,
+  "lng": -6.84,
+  "region": "Africa"
+ },
+ {
+  "code": "MOZ",
+  "cca2": "MZ",
+  "name": "Mozambique",
+  "capital": "Maputo",
+  "lat": -25.95,
+  "lng": 32.59,
+  "region": "Africa"
+ },
+ {
+  "code": "MMR",
+  "cca2": "MM",
+  "name": "Myanmar",
+  "capital": "Naypyidaw",
+  "lat": 19.77,
+  "lng": 96.12,
+  "region": "Asia"
+ },
+ {
+  "code": "NAM",
+  "cca2": "NA",
+  "name": "Namibia",
+  "capital": "Windhoek",
+  "lat": -22.57,
+  "lng": 17.08,
+  "region": "Africa"
+ },
+ {
+  "code": "NRU",
+  "cca2": "NR",
+  "name": "Nauru",
+  "capital": "Yaren",
+  "lat": -0.55,
+  "lng": 166.92,
+  "region": "Oceania"
+ },
+ {
+  "code": "NPL",
+  "cca2": "NP",
+  "name": "Nepal",
+  "capital": "Kathmandu",
+  "lat": 27.72,
+  "lng": 85.31,
+  "region": "Asia"
+ },
+ {
+  "code": "NLD",
+  "cca2": "NL",
+  "name": "Netherlands",
+  "capital": "Amsterdam",
+  "lat": 52.35,
+  "lng": 4.91,
+  "region": "Europe"
+ },
+ {
+  "code": "NZL",
+  "cca2": "NZ",
+  "name": "New Zealand",
+  "capital": "Wellington",
+  "lat": -41.3,
+  "lng": 174.78,
+  "region": "Oceania"
+ },
+ {
+  "code": "NIC",
+  "cca2": "NI",
+  "name": "Nicaragua",
+  "capital": "Managua",
+  "lat": 12.15,
+  "lng": -86.27,
+  "region": "Americas"
+ },
+ {
+  "code": "NER",
+  "cca2": "NE",
+  "name": "Niger",
+  "capital": "Niamey",
+  "lat": 13.49,
+  "lng": 7.1,
+  "region": "Africa"
+ },
+ {
+  "code": "NGA",
+  "cca2": "NG",
+  "name": "Nigeria",
+  "capital": "Abuja",
+  "lat": 9.09,
+  "lng": 7.53,
+  "region": "Africa"
+ },
+ {
+  "code": "PRK",
+  "cca2": "KP",
+  "name": "North Korea",
+  "capital": "Pyongyang",
+  "lat": 39.02,
+  "lng": 125.75,
+  "region": "Asia"
+ },
+ {
+  "code": "MKD",
+  "cca2": "MK",
+  "name": "North Macedonia",
+  "capital": "Skopje",
+  "lat": 42,
+  "lng": 21.43,
+  "region": "Europe"
+ },
+ {
+  "code": "NOR",
+  "cca2": "NO",
+  "name": "Norway",
+  "capital": "Oslo",
+  "lat": 59.92,
+  "lng": 10.75,
+  "region": "Europe"
+ },
+ {
+  "code": "OMN",
+  "cca2": "OM",
+  "name": "Oman",
+  "capital": "Muscat",
+  "lat": 23.61,
+  "lng": 58.59,
+  "region": "Asia"
+ },
+ {
+  "code": "PAK",
+  "cca2": "PK",
+  "name": "Pakistan",
+  "capital": "Islamabad",
+  "lat": 33.7,
+  "lng": 73.16,
+  "region": "Asia"
+ },
+ {
+  "code": "PLW",
+  "cca2": "PW",
+  "name": "Palau",
+  "capital": "Ngerulmud",
+  "lat": 7.5,
+  "lng": 134.62,
+  "region": "Oceania"
+ },
+ {
+  "code": "PAN",
+  "cca2": "PA",
+  "name": "Panama",
+  "capital": "Panama City",
+  "lat": 8.97,
+  "lng": -79.53,
+  "region": "Americas"
+ },
+ {
+  "code": "PNG",
+  "cca2": "PG",
+  "name": "Papua New Guinea",
+  "capital": "Port Moresby",
+  "lat": -9.46,
+  "lng": 147.19,
+  "region": "Oceania"
+ },
+ {
+  "code": "PRY",
+  "cca2": "PY",
+  "name": "Paraguay",
+  "capital": "Asunción",
+  "lat": -25.29,
+  "lng": -57.64,
+  "region": "Americas"
+ },
+ {
+  "code": "PER",
+  "cca2": "PE",
+  "name": "Peru",
+  "capital": "Lima",
+  "lat": -12.05,
+  "lng": -77.05,
+  "region": "Americas"
+ },
+ {
+  "code": "PHL",
+  "cca2": "PH",
+  "name": "Philippines",
+  "capital": "Manila",
+  "lat": 14.61,
+  "lng": 120.98,
+  "region": "Asia"
+ },
+ {
+  "code": "POL",
+  "cca2": "PL",
+  "name": "Poland",
+  "capital": "Warsaw",
+  "lat": 52.25,
+  "lng": 21,
+  "region": "Europe"
+ },
+ {
+  "code": "PRT",
+  "cca2": "PT",
+  "name": "Portugal",
+  "capital": "Lisbon",
+  "lat": 38.72,
+  "lng": -9.15,
+  "region": "Europe"
+ },
+ {
+  "code": "QAT",
+  "cca2": "QA",
+  "name": "Qatar",
+  "capital": "Doha",
+  "lat": 25.29,
+  "lng": 51.53,
+  "region": "Asia"
+ },
+ {
+  "code": "ROU",
+  "cca2": "RO",
+  "name": "Romania",
+  "capital": "Bucharest",
+  "lat": 44.44,
+  "lng": 26.1,
+  "region": "Europe"
+ },
+ {
+  "code": "RUS",
+  "cca2": "RU",
+  "name": "Russia",
+  "capital": "Moscow",
+  "lat": 55.75,
+  "lng": 37.61,
+  "region": "Europe"
+ },
+ {
+  "code": "RWA",
+  "cca2": "RW",
+  "name": "Rwanda",
+  "capital": "Kigali",
+  "lat": -1.95,
+  "lng": 30.06,
+  "region": "Africa"
+ },
+ {
+  "code": "KNA",
+  "cca2": "KN",
+  "name": "Saint Kitts and Nevis",
+  "capital": "Basseterre",
+  "lat": 17.3,
+  "lng": -62.72,
+  "region": "Americas"
+ },
+ {
+  "code": "LCA",
+  "cca2": "LC",
+  "name": "Saint Lucia",
+  "capital": "Castries",
+  "lat": 14,
+  "lng": -61,
+  "region": "Americas"
+ },
+ {
+  "code": "VCT",
+  "cca2": "VC",
+  "name": "Saint Vincent and the Grenadines",
+  "capital": "Kingstown",
+  "lat": 13.15,
+  "lng": -61.21,
+  "region": "Americas"
+ },
+ {
+  "code": "WSM",
+  "cca2": "WS",
+  "name": "Samoa",
+  "capital": "Apia",
+  "lat": -13.84,
+  "lng": -171.74,
+  "region": "Oceania"
+ },
+ {
+  "code": "SMR",
+  "cca2": "SM",
+  "name": "San Marino",
+  "capital": "San Marino",
+  "lat": 43.94,
+  "lng": 12.44,
+  "region": "Europe"
+ },
+ {
+  "code": "STP",
+  "cca2": "ST",
+  "name": "São Tomé and Príncipe",
+  "capital": "São Tomé",
+  "lat": 0.33,
+  "lng": 6.73,
+  "region": "Africa"
+ },
+ {
+  "code": "SAU",
+  "cca2": "SA",
+  "name": "Saudi Arabia",
+  "capital": "Riyadh",
+  "lat": 24.64,
+  "lng": 46.77,
+  "region": "Asia"
+ },
+ {
+  "code": "SEN",
+  "cca2": "SN",
+  "name": "Senegal",
+  "capital": "Dakar",
+  "lat": 14.72,
+  "lng": -17.48,
+  "region": "Africa"
+ },
+ {
+  "code": "SRB",
+  "cca2": "RS",
+  "name": "Serbia",
+  "capital": "Belgrade",
+  "lat": 44.82,
+  "lng": 20.47,
+  "region": "Europe"
+ },
+ {
+  "code": "SYC",
+  "cca2": "SC",
+  "name": "Seychelles",
+  "capital": "Victoria",
+  "lat": -4.62,
+  "lng": 55.45,
+  "region": "Africa"
+ },
+ {
+  "code": "SLE",
+  "cca2": "SL",
+  "name": "Sierra Leone",
+  "capital": "Freetown",
+  "lat": 8.47,
+  "lng": -13.24,
+  "region": "Africa"
+ },
+ {
+  "code": "SGP",
+  "cca2": "SG",
+  "name": "Singapore",
+  "capital": "Singapore",
+  "lat": 1.29,
+  "lng": 103.85,
+  "region": "Asia"
+ },
+ {
+  "code": "SVK",
+  "cca2": "SK",
+  "name": "Slovakia",
+  "capital": "Bratislava",
+  "lat": 48.15,
+  "lng": 17.12,
+  "region": "Europe"
+ },
+ {
+  "code": "SVN",
+  "cca2": "SI",
+  "name": "Slovenia",
+  "capital": "Ljubljana",
+  "lat": 46.06,
+  "lng": 14.51,
+  "region": "Europe"
+ },
+ {
+  "code": "SLB",
+  "cca2": "SB",
+  "name": "Solomon Islands",
+  "capital": "Honiara",
+  "lat": -9.44,
+  "lng": 159.95,
+  "region": "Oceania"
+ },
+ {
+  "code": "SOM",
+  "cca2": "SO",
+  "name": "Somalia",
+  "capital": "Mogadishu",
+  "lat": 2.07,
+  "lng": 45.36,
+  "region": "Africa"
+ },
+ {
+  "code": "ZAF",
+  "cca2": "ZA",
+  "name": "South Africa",
+  "capital": "Pretoria",
+  "lat": -25.7,
+  "lng": 28.23,
+  "region": "Africa"
+ },
+ {
+  "code": "KOR",
+  "cca2": "KR",
+  "name": "South Korea",
+  "capital": "Seoul",
+  "lat": 37.57,
+  "lng": 127,
+  "region": "Asia"
+ },
+ {
+  "code": "SSD",
+  "cca2": "SS",
+  "name": "South Sudan",
+  "capital": "Juba",
+  "lat": 4.83,
+  "lng": 31.58,
+  "region": "Africa"
+ },
+ {
+  "code": "ESP",
+  "cca2": "ES",
+  "name": "Spain",
+  "capital": "Madrid",
+  "lat": 40.4,
+  "lng": -3.69,
+  "region": "Europe"
+ },
+ {
+  "code": "LKA",
+  "cca2": "LK",
+  "name": "Sri Lanka",
+  "capital": "Colombo",
+  "lat": 6.93,
+  "lng": 79.86,
+  "region": "Asia"
+ },
+ {
+  "code": "SDN",
+  "cca2": "SD",
+  "name": "Sudan",
+  "capital": "Khartoum",
+  "lat": 15.59,
+  "lng": 32.53,
+  "region": "Africa"
+ },
+ {
+  "code": "SUR",
+  "cca2": "SR",
+  "name": "Suriname",
+  "capital": "Paramaribo",
+  "lat": 5.84,
+  "lng": -55.17,
+  "region": "Americas"
+ },
+ {
+  "code": "SWE",
+  "cca2": "SE",
+  "name": "Sweden",
+  "capital": "Stockholm",
+  "lat": 59.35,
+  "lng": 18.1,
+  "region": "Europe"
+ },
+ {
+  "code": "CHE",
+  "cca2": "CH",
+  "name": "Switzerland",
+  "capital": "Bern",
+  "lat": 46.92,
+  "lng": 7.47,
+  "region": "Europe"
+ },
+ {
+  "code": "SYR",
+  "cca2": "SY",
+  "name": "Syria",
+  "capital": "Damascus",
+  "lat": 33.5,
+  "lng": 36.3,
+  "region": "Asia"
+ },
+ {
+  "code": "TJK",
+  "cca2": "TJ",
+  "name": "Tajikistan",
+  "capital": "Dushanbe",
+  "lat": 38.56,
+  "lng": 68.77,
+  "region": "Asia"
+ },
+ {
+  "code": "TZA",
+  "cca2": "TZ",
+  "name": "Tanzania",
+  "capital": "Dodoma",
+  "lat": -6.18,
+  "lng": 35.75,
+  "region": "Africa"
+ },
+ {
+  "code": "THA",
+  "cca2": "TH",
+  "name": "Thailand",
+  "capital": "Bangkok",
+  "lat": 13.75,
+  "lng": 100.51,
+  "region": "Asia"
+ },
+ {
+  "code": "TLS",
+  "cca2": "TL",
+  "name": "Timor-Leste",
+  "capital": "Dili",
+  "lat": -8.56,
+  "lng": 125.58,
+  "region": "Asia"
+ },
+ {
+  "code": "TGO",
+  "cca2": "TG",
+  "name": "Togo",
+  "capital": "Lomé",
+  "lat": 6.13,
+  "lng": 1.22,
+  "region": "Africa"
+ },
+ {
+  "code": "TON",
+  "cca2": "TO",
+  "name": "Tonga",
+  "capital": "Nuku'alofa",
+  "lat": -21.14,
+  "lng": -175.22,
+  "region": "Oceania"
+ },
+ {
+  "code": "TTO",
+  "cca2": "TT",
+  "name": "Trinidad and Tobago",
+  "capital": "Port of Spain",
+  "lat": 10.65,
+  "lng": -61.52,
+  "region": "Americas"
+ },
+ {
+  "code": "TUN",
+  "cca2": "TN",
+  "name": "Tunisia",
+  "capital": "Tunis",
+  "lat": 36.8,
+  "lng": 10.18,
+  "region": "Africa"
+ },
+ {
+  "code": "TUR",
+  "cca2": "TR",
+  "name": "Türkiye",
+  "capital": "Ankara",
+  "lat": 39.93,
+  "lng": 32.86,
+  "region": "Asia"
+ },
+ {
+  "code": "TKM",
+  "cca2": "TM",
+  "name": "Turkmenistan",
+  "capital": "Ashgabat",
+  "lat": 37.95,
+  "lng": 58.38,
+  "region": "Asia"
+ },
+ {
+  "code": "TUV",
+  "cca2": "TV",
+  "name": "Tuvalu",
+  "capital": "Funafuti",
+  "lat": -8.52,
+  "lng": 179.22,
+  "region": "Oceania"
+ },
+ {
+  "code": "UGA",
+  "cca2": "UG",
+  "name": "Uganda",
+  "capital": "Kampala",
+  "lat": 0.32,
+  "lng": 32.58,
+  "region": "Africa"
+ },
+ {
+  "code": "UKR",
+  "cca2": "UA",
+  "name": "Ukraine",
+  "capital": "Kyiv",
+  "lat": 50.44,
+  "lng": 30.51,
+  "region": "Europe"
+ },
+ {
+  "code": "ARE",
+  "cca2": "AE",
+  "name": "United Arab Emirates",
+  "capital": "Abu Dhabi",
+  "lat": 24.47,
+  "lng": 54.37,
+  "region": "Asia"
+ },
+ {
+  "code": "GBR",
+  "cca2": "GB",
+  "name": "United Kingdom",
+  "capital": "London",
+  "lat": 51.5,
+  "lng": -0.12,
+  "region": "Europe"
+ },
+ {
+  "code": "USA",
+  "cca2": "US",
+  "name": "United States",
+  "capital": "Washington, D.C.",
+  "lat": 38.9,
+  "lng": -77.01,
+  "region": "Americas"
+ },
+ {
+  "code": "URY",
+  "cca2": "UY",
+  "name": "Uruguay",
+  "capital": "Montevideo",
+  "lat": -34.86,
+  "lng": -56.17,
+  "region": "Americas"
+ },
+ {
+  "code": "UZB",
+  "cca2": "UZ",
+  "name": "Uzbekistan",
+  "capital": "Tashkent",
+  "lat": 41.31,
+  "lng": 69.29,
+  "region": "Asia"
+ },
+ {
+  "code": "VUT",
+  "cca2": "VU",
+  "name": "Vanuatu",
+  "capital": "Port Vila",
+  "lat": -17.73,
+  "lng": 168.32,
+  "region": "Oceania"
+ },
+ {
+  "code": "VAT",
+  "cca2": "VA",
+  "name": "Vatican City",
+  "capital": "Vatican City",
+  "lat": 41.9,
+  "lng": 12.45,
+  "region": "Europe"
+ },
+ {
+  "code": "VEN",
+  "cca2": "VE",
+  "name": "Venezuela",
+  "capital": "Caracas",
+  "lat": 10.5,
+  "lng": -66.92,
+  "region": "Americas"
+ },
+ {
+  "code": "VNM",
+  "cca2": "VN",
+  "name": "Vietnam",
+  "capital": "Hanoi",
+  "lat": 21.04,
+  "lng": 105.85,
+  "region": "Asia"
+ },
+ {
+  "code": "YEM",
+  "cca2": "YE",
+  "name": "Yemen",
+  "capital": "Sana'a",
+  "lat": 15.36,
+  "lng": 44.2,
+  "region": "Asia"
+ },
+ {
+  "code": "ZMB",
+  "cca2": "ZM",
+  "name": "Zambia",
+  "capital": "Lusaka",
+  "lat": -15.41,
+  "lng": 28.28,
+  "region": "Africa"
+ },
+ {
+  "code": "ZWE",
+  "cca2": "ZW",
+  "name": "Zimbabwe",
+  "capital": "Harare",
+  "lat": -17.82,
+  "lng": 31.04,
+  "region": "Africa"
+ }
+]
