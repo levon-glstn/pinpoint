@@ -21,21 +21,18 @@ npm run build:data
 
 ## Stack
 
-Vite + React, `react-globe.gl` (three.js). Scores/leaderboard via Supabase are the next step.
+Vite + React, `react-globe.gl` (three.js), Supabase for the backend, deployed on Vercel.
 
-## Supabase
+## Supabase features
 
-Database, anonymous + email auth, and Realtime for the leaderboard.
-
-1. In the Supabase SQL Editor run `supabase/01_schema.sql`, then `supabase/02_seed_countries.sql`.
-2. Authentication: enable anonymous sign-ins, enable manual linking, and enable the GitHub provider
-   (GitHub OAuth app callback: `https://<project-ref>.supabase.co/auth/v1/callback`). Set the Site URL /
-   redirect URLs to where the app runs. Sign-in is GitHub-only, so no email is ever sent.
-3. Create `.env.local` (never commit it):
-
-```
-VITE_SUPABASE_URL=https://<project-ref>.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=<publishable key>
-```
-
-Without these the game still plays, using the bundled `countries.json` and no leaderboard.
+- **Database (Postgres):** a `countries` table (194 rows) that the game loads at startup, and a `scores` table
+  behind the leaderboard. The bundled `countries.json` is only a fallback if the database can't be reached.
+- **Row Level Security:** anyone can read countries and scores. Only signed-in players can submit a score, and
+  only under their own user ID. Scores can't be edited or deleted, and check constraints keep points between
+  0 and 10,000 and display names to 24 characters.
+- **Auth:** guests are signed in anonymously when a game starts, so there is no login wall. Players can
+  optionally sign in with GitHub, which links to their guest account so earlier scores are kept and follow
+  them across devices. Their display name is stored on the account.
+- **Realtime:** the top-20 leaderboard updates live, and a toast announces when someone else scores.
+- **Auto-generated API:** the browser talks to Postgres directly through `supabase-js` with the publishable
+  key. There is no custom server.
