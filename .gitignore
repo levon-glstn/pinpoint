@@ -3,3 +3,5 @@ dist
 .env
 .env.local
 .claude/settings.local.json
+.vercel
+.env*

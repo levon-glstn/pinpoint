@@ -7,8 +7,48 @@ import {
   verdictFor,
 } from '../lib/geo.js'
 import { useCountUp } from '../lib/useCountUp.js'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { LEADERBOARD_SIZE, fetchTopScores, sendMagicLink, signOut, subscribeToScores } from '../lib/supabase.js'
+
+// Decorative emoji confetti ('pop', launched upwards) or rain ('rain', falling).
+// Rendered outside transformed/blurred parents so `fixed` means the viewport.
+export function EmojiBurst({ emojis, count, mode }) {
+  const items = useMemo(
+    () =>
+      Array.from({ length: count }, () => ({
+        e: emojis[Math.floor(Math.random() * emojis.length)],
+        x: Math.random() * 100, // rain: left position in vw
+        drift: (Math.random() - 0.5) * 90, // pop: sideways travel in vw
+        rise: 35 + Math.random() * 45, // pop: height in vh
+        size: 1.3 + Math.random() * 1.7,
+        delay: Math.random() * (mode === 'rain' ? 1.4 : 0.35),
+        dur: mode === 'rain' ? 2.2 + Math.random() * 2 : 1.4 + Math.random() * 1.2,
+        rot: (Math.random() - 0.5) * 720,
+      })),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+  return (
+    <div className={`burst burst-${mode}`} aria-hidden="true">
+      {items.map((it, i) => (
+        <span
+          key={i}
+          style={{
+            '--x': `${it.x}vw`,
+            '--drift': `${it.drift}vw`,
+            '--rise': `${it.rise}vh`,
+            '--size': `${it.size}rem`,
+            '--rot': `${it.rot}deg`,
+            animationDelay: `${it.delay}s`,
+            animationDuration: `${it.dur}s`,
+          }}
+        >
+          {it.e}
+        </span>
+      ))}
+    </div>
+  )
+}
 
 export function Intro({ best, onPlay, loading, onLeaderboard, onHelp, onAccount, user, rounds }) {
   return (
@@ -96,36 +136,42 @@ export function GuessDock({ hasGuess, onConfirm }) {
 
 export function RevealCard({ result, isLast, onNext }) {
   const { country, km, points } = result
-  const verdict = verdictFor(km)
+  const verdict = useMemo(() => verdictFor(km), [km])
   const shown = useCountUp(points, 700)
   return (
-    <div className="dock">
-      <div className="reveal glass">
-        <div className="reveal-verdict">
-          <span className="reveal-emoji">{verdict.emoji}</span>
-          <span>{verdict.label}</span>
+    <>
+      {verdict.burst && <EmojiBurst {...verdict.burst} />}
+      <div className="dock">
+        <div className={`reveal glass reveal-${verdict.tier}`}>
+          <div className="reveal-verdict">
+            <span className="reveal-emoji">{verdict.emoji}</span>
+            <div className="reveal-text">
+              <span className="reveal-label">{verdict.label}</span>
+              {verdict.sub && <small className="reveal-sub">{verdict.sub}</small>}
+            </div>
+          </div>
+          <div className="reveal-grid">
+            <div>
+              <span className="muted">Capital of {country.name}</span>
+              <b className="reveal-capital">{country.capital}</b>
+            </div>
+            <div>
+              <span className="muted">You were</span>
+              <b>{formatKm(km)} away</b>
+            </div>
+            <div>
+              <span className="muted">Points</span>
+              <b className="reveal-points" style={{ color: scoreColor(points) }}>
+                +{shown.toLocaleString()}
+              </b>
+            </div>
+          </div>
+          <button className="btn btn-primary" onClick={onNext} autoFocus>
+            {isLast ? 'See results' : 'Next country'} <kbd>↵</kbd>
+          </button>
         </div>
-        <div className="reveal-grid">
-          <div>
-            <span className="muted">Capital of {country.name}</span>
-            <b className="reveal-capital">{country.capital}</b>
-          </div>
-          <div>
-            <span className="muted">You were</span>
-            <b>{formatKm(km)} away</b>
-          </div>
-          <div>
-            <span className="muted">Points</span>
-            <b className="reveal-points" style={{ color: scoreColor(points) }}>
-              +{shown.toLocaleString()}
-            </b>
-          </div>
-        </div>
-        <button className="btn btn-primary" onClick={onNext} autoFocus>
-          {isLast ? 'See results' : 'Next country'} <kbd>↵</kbd>
-        </button>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -133,54 +179,64 @@ export function Results({ results, total, best, isNewBest, onRestart, onHome, on
   const score = useCountUp(total, 1400)
   const rating = ratingFor(total)
   return (
-    <div className="results glass">
-      <span className="muted">Final score</span>
-      <div className="results-score">{score.toLocaleString()}</div>
-      <div className="results-rating">
-        <span>{rating.emoji}</span> {rating.title}
+    <>
+      {rating.burst && <EmojiBurst {...rating.burst} />}
+      <div className="results glass">
+        <span className="muted">Final score</span>
+        <div className="results-score">{score.toLocaleString()}</div>
+        <div className="results-rating">
+          <span>{rating.emoji}</span> {rating.title}
+        </div>
+        <p className="results-blurb">{rating.blurb}</p>
+        <p className="muted">
+          {isNewBest ? <span className="badge">New personal best</span> : <>Personal best {best.toLocaleString()}</>}
+        </p>
+
+        <ul className="results-list">
+          {results.map((r, i) => (
+            <li key={r.country.code} style={{ animationDelay: `${i * 45}ms` }}>
+              <span className="flag">{flagEmoji(r.country.cca2)}</span>
+              <span className="results-name">
+                <b>{r.country.name}</b>
+                <small>{r.country.capital}</small>
+              </span>
+              <span className="results-km">{formatKm(r.km)}</span>
+              <span className="results-bar">
+                <i
+                  style={{
+                    width: `${(r.points / MAX_SCORE_PER_ROUND) * 100}%`,
+                    background: scoreColor(r.points),
+                  }}
+                />
+              </span>
+              <b className="results-pts">{r.points.toLocaleString()}</b>
+            </li>
+          ))}
+        </ul>
+
+        {onSave && <SaveScore onSave={onSave} onLeaderboard={onLeaderboard} onAccount={onAccount} user={user} />}
+
+        <div className="dock-row">
+          <button className="btn btn-ghost btn-lg" onClick={onHome}>
+            Home
+          </button>
+          <button className="btn btn-primary btn-lg" onClick={onRestart} autoFocus={!onSave}>
+            Play again <kbd>↵</kbd>
+          </button>
+        </div>
       </div>
-      <p className="muted">
-        {isNewBest ? <span className="badge">New personal best</span> : <>Personal best {best.toLocaleString()}</>}
-      </p>
-
-      <ul className="results-list">
-        {results.map((r, i) => (
-          <li key={r.country.code} style={{ animationDelay: `${i * 45}ms` }}>
-            <span className="flag">{flagEmoji(r.country.cca2)}</span>
-            <span className="results-name">
-              <b>{r.country.name}</b>
-              <small>{r.country.capital}</small>
-            </span>
-            <span className="results-km">{formatKm(r.km)}</span>
-            <span className="results-bar">
-              <i
-                style={{
-                  width: `${(r.points / MAX_SCORE_PER_ROUND) * 100}%`,
-                  background: scoreColor(r.points),
-                }}
-              />
-            </span>
-            <b className="results-pts">{r.points.toLocaleString()}</b>
-          </li>
-        ))}
-      </ul>
-
-      {onSave && <SaveScore onSave={onSave} onLeaderboard={onLeaderboard} onAccount={onAccount} user={user} />}
-
-      <div className="dock-row">
-        <button className="btn btn-ghost btn-lg" onClick={onHome}>
-          Home
-        </button>
-        <button className="btn btn-primary btn-lg" onClick={onRestart} autoFocus={!onSave}>
-          Play again <kbd>↵</kbd>
-        </button>
-      </div>
-    </div>
+    </>
   )
 }
 
 function SaveScore({ onSave, onLeaderboard, onAccount, user }) {
-  const [name, setName] = useState(() => localStorage.getItem('pinpoint:name') || '')
+  // A signed-in player already has an identity: reuse their saved name and only
+  // ask when they have none yet (or want to change it). Guests get an optional field.
+  const account = user && !user.is_anonymous ? user : null
+  const savedName = (account?.user_metadata?.display_name || localStorage.getItem('pinpoint:name') || '').trim()
+  const [name, setName] = useState(savedName)
+  const [editing, setEditing] = useState(false)
+  const askName = !account || !savedName || editing
   const [status, setStatus] = useState('idle') // idle | saving | saved | error
   const [rank, setRank] = useState(null) // { rank, total } once saved
 
@@ -219,18 +275,26 @@ function SaveScore({ onSave, onLeaderboard, onAccount, user }) {
 
   return (
     <form className="save" onSubmit={submit}>
-      <input
-        className="input"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        maxLength={24}
-        placeholder="Display name (optional)"
-        aria-label="Display name"
-        disabled={status === 'saving'}
-      />
+      {askName && (
+        <input
+          className="input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={24}
+          placeholder={account ? 'Pick a display name' : 'Display name (optional)'}
+          aria-label="Display name"
+          autoFocus={editing}
+          disabled={status === 'saving'}
+        />
+      )}
       <button className="btn btn-primary" disabled={status === 'saving'}>
-        {status === 'saving' ? 'Saving…' : 'Submit score'}
+        {status === 'saving' ? 'Saving…' : askName ? 'Submit score' : `Submit as ${name}`}
       </button>
+      {!askName && status !== 'saving' && (
+        <button type="button" className="link-btn" onClick={() => setEditing(true)}>
+          Change name
+        </button>
+      )}
       {status === 'error' && <span className="save-error">Couldn't save. Try again.</span>}
     </form>
   )

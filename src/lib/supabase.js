@@ -36,8 +36,9 @@ export function watchUser(onUser) {
 }
 
 // Email magic link. A guest (anonymous user) is upgraded in place, so their
-// user_id and earlier scores are kept. If the email already belongs to an
-// account (e.g. signing in on a new device) we send a sign-in link instead.
+// user_id and earlier scores are kept. Otherwise (no session yet, or the email
+// already belongs to an account, e.g. signing in on a new device) we send a
+// regular sign-in link, which also creates the account for a brand-new email.
 export async function sendMagicLink(email) {
   const emailRedirectTo = window.location.origin
   const { data } = await supabase.auth.getSession()
@@ -48,10 +49,17 @@ export async function sendMagicLink(email) {
   }
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo, shouldCreateUser: false },
+    options: { emailRedirectTo },
   })
   if (error) throw error
   return 'signin'
+}
+
+// Remember the leaderboard name on the account itself (auth user metadata), so a
+// signed-in player is asked once and the name follows them across devices.
+export async function saveDisplayName(name) {
+  const { error } = await supabase.auth.updateUser({ data: { display_name: name } })
+  if (error) throw error
 }
 
 export function signOut() {

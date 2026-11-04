@@ -50,20 +50,97 @@ export function shuffled(list) {
 
 export const formatKm = (km) => (km < 1 ? '<1 km' : `${Math.round(km).toLocaleString()} km`)
 
+// Funny reactions. Lines are picked from the distance itself, so a given guess
+// always gets the same joke (no re-roll on re-render) while different guesses vary.
+const pick = (list, km) => list[Math.round(km) % list.length]
+
+const BULLSEYE_LABELS = ['HUUUUUUGE KUDOS!!!', 'BUUUULLSEYE!!!', 'ARE YOU A SATELLITE?!', 'ABSOLUTELY UNREAL!!!']
+const BULLSEYE_SUBS = [
+  'Google Maps wants its job back.',
+  'Cartographers everywhere are sweating.',
+  'Legend. Absolute legend.',
+  'Did you cheat? (Respect either way.)',
+  'Somewhere, a geography teacher just cried happy tears.',
+]
+const FAR_LABELS = [
+  'Wrong side of the planet?',
+  'Did you even LOOK at the globe?',
+  'Bold. Wrong, but bold.',
+  'Geography is crying.',
+  'Interesting strategy. Terrible, but interesting.',
+]
+const OFF_SUBS = ['The globe is round, you know.', 'Closer to a different country entirely.', 'A for effort. Mostly E.']
+const EARTH_HALF_KM = 20015 // distance to the exact opposite side of the planet
+const JET_KMH = 900
+
+const CONFETTI = ['🎉', '🎯', '🏆', '🔥', '⭐', '🥳', '👏', '💥']
+const GIGGLES = ['😂', '🤣', '😅', '🫠', '😭', '🙃', '😆', '💀', '😹']
+
 export function verdictFor(km) {
-  if (km <= 50) return { label: 'Bullseye', emoji: '🎯' }
-  if (km <= 300) return { label: 'So close', emoji: '🔥' }
-  if (km <= 1000) return { label: 'Not bad', emoji: '👌' }
-  if (km <= 3000) return { label: 'Off a bit', emoji: '🧭' }
-  return { label: 'Wrong side of the planet?', emoji: '🌊' }
+  if (km <= 50)
+    return {
+      tier: 'bullseye',
+      emoji: '🎯',
+      label: pick(BULLSEYE_LABELS, km),
+      sub: pick(BULLSEYE_SUBS, km),
+      burst: { emojis: CONFETTI, count: 40, mode: 'pop' },
+    }
+  if (km <= 300)
+    return {
+      tier: 'close',
+      emoji: '🔥',
+      label: 'SO CLOSE!',
+      sub: 'Chef’s kiss. Almost.',
+      burst: { emojis: ['🔥', '👏', '😎', '✨'], count: 14, mode: 'pop' },
+    }
+  if (km <= 1000) return { tier: 'ok', emoji: '👌', label: 'Not bad', sub: null, burst: null }
+  if (km <= 3000)
+    return {
+      tier: 'off',
+      emoji: '🧭',
+      label: 'Off a bit',
+      sub: pick(OFF_SUBS, km),
+      burst: { emojis: ['😬', '🧭', '🤏'], count: 8, mode: 'rain' },
+    }
+  const hours = km / JET_KMH
+  const sub =
+    km > 10000
+      ? `That’s ${Math.min(100, Math.round((km / EARTH_HALF_KM) * 100))}% of the way to the exact opposite side of the planet. 🕳️`
+      : `A jet would need ~${hours < 10 ? hours.toFixed(1) : Math.round(hours)} hours to fix that guess. ✈️`
+  return {
+    tier: 'far',
+    emoji: '😂🤣😅',
+    label: pick(FAR_LABELS, km),
+    sub,
+    burst: { emojis: GIGGLES, count: 44, mode: 'rain' },
+  }
 }
 
 export function ratingFor(total) {
-  if (total >= 9000) return { title: 'Cartographer legend', emoji: '🏆' }
-  if (total >= 7500) return { title: 'Master navigator', emoji: '🧭' }
-  if (total >= 5500) return { title: 'Seasoned explorer', emoji: '🌍' }
-  if (total >= 3500) return { title: 'Weekend wanderer', emoji: '🎒' }
-  return { title: 'Lost at sea', emoji: '🌊' }
+  if (total >= 9000)
+    return {
+      title: 'Cartographer legend',
+      emoji: '🏆',
+      blurb: 'Cartographers hate you. (They’re just jealous.)',
+      burst: { emojis: CONFETTI, count: 50, mode: 'pop' },
+    }
+  if (total >= 7500)
+    return {
+      title: 'Master navigator',
+      emoji: '🧭',
+      blurb: 'Magellan would hire you on the spot.',
+      burst: { emojis: ['🎉', '🧭', '👏', '✨'], count: 24, mode: 'pop' },
+    }
+  if (total >= 5500)
+    return { title: 'Seasoned explorer', emoji: '🌍', blurb: 'Respectable. Your globe has seen things.', burst: null }
+  if (total >= 3500)
+    return { title: 'Weekend wanderer', emoji: '🎒', blurb: 'You know where Europe is. Probably.', burst: null }
+  return {
+    title: 'Lost at sea',
+    emoji: '🌊',
+    blurb: 'Have you considered… a map? Or glasses?',
+    burst: { emojis: ['🌊', '🐟', '😅', '🛟', '🦈'], count: 30, mode: 'rain' },
+  }
 }
 
 // Colour for a round's score, used by the progress segments and result bars.

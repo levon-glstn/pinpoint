@@ -757,3 +757,187 @@ kbd {
     align-items: center;
   }
 }
+
+/* ---------- funny reactions ---------- */
+
+.reveal-verdict {
+  max-width: 100%;
+}
+
+.reveal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reveal-sub {
+  color: var(--muted);
+  font-family: var(--body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* Bullseye: gold, huge, bouncing. */
+.reveal-bullseye {
+  box-shadow:
+    0 0 0 2px rgba(255, 205, 70, 0.7),
+    0 0 70px rgba(255, 190, 40, 0.45),
+    0 24px 70px rgba(0, 0, 0, 0.5);
+  animation: kudos-card 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+.reveal-bullseye .reveal-emoji {
+  font-size: 2.6rem;
+  animation: kudos-spin 1.2s ease-in-out infinite;
+}
+
+.reveal-bullseye .reveal-label {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #fff6c8, #ffc83a 60%, #ff9d1f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: kudos-wiggle 0.9s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.reveal-close .reveal-label {
+  color: #ffb454;
+  font-size: 1.35rem;
+}
+
+.reveal-far .reveal-emoji {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  animation: giggle 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes kudos-card {
+  from {
+    transform: scale(0.8) rotate(-2deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06) rotate(1deg);
+  }
+}
+
+@keyframes kudos-spin {
+  50% {
+    transform: scale(1.25) rotate(18deg);
+  }
+}
+
+@keyframes kudos-wiggle {
+  0%,
+  100% {
+    transform: rotate(-1.5deg) scale(1);
+  }
+  50% {
+    transform: rotate(1.5deg) scale(1.05);
+  }
+}
+
+@keyframes giggle {
+  from {
+    transform: translateY(0) rotate(-6deg);
+  }
+  to {
+    transform: translateY(-4px) rotate(6deg);
+  }
+}
+
+.results-blurb {
+  color: #c9d3de;
+  font-style: italic;
+  margin: 2px 0 4px;
+  text-align: center;
+}
+
+/* Emoji confetti / rain overlay. Purely decorative: never blocks the globe. */
+.burst {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.burst span {
+  position: absolute;
+  font-size: var(--size);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  will-change: transform, opacity;
+}
+
+.burst-rain span {
+  top: 0;
+  left: var(--x);
+  animation-name: emoji-fall;
+}
+
+.burst-pop span {
+  bottom: 14vh;
+  left: 50%;
+  animation-name: emoji-pop;
+  animation-timing-function: cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+@keyframes emoji-fall {
+  from {
+    transform: translateY(-12vh) rotate(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(112vh) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@keyframes emoji-pop {
+  from {
+    transform: translate(0, 0) scale(0.3) rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--drift), calc(var(--rise) * -1)) scale(1) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burst {
+    display: none;
+  }
+  .reveal-bullseye,
+  .reveal-bullseye .reveal-emoji,
+  .reveal-bullseye .reveal-label,
+  .reveal-far .reveal-emoji {
+    animation: none;
+  }
+}
+
+.link-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 4px 6px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  color: var(--text);
+}

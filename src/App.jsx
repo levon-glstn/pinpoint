@@ -19,6 +19,7 @@ import {
   ensureSession,
   fetchCountries,
   fetchRank,
+  saveDisplayName,
   submitScore,
   subscribeToScores,
   watchUser,
@@ -106,13 +107,17 @@ export default function App() {
       const row = await submitScore(total, name)
       localStorage.setItem(NAME_KEY, name)
       setSaved(true)
+      // Signed-in players keep their name on the account; not critical if it fails.
+      if (name && user && !user.is_anonymous && user.user_metadata?.display_name !== name) {
+        saveDisplayName(name).catch((e) => console.error('Could not save display name', e))
+      }
       // The score is already saved; a failed rank lookup just means no rank line.
       return fetchRank(row).catch((e) => {
         console.error('Could not fetch rank', e)
         return null
       })
     },
-    [saved, total],
+    [saved, total, user],
   )
 
   const goHome = useCallback(() => {
