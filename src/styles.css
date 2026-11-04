@@ -941,3 +941,8 @@ kbd {
 .link-btn:hover {
   color: var(--text);
 }
+
+.oauth-btn {
+  width: 100%;
+  justify-content: center;
+}

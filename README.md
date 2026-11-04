@@ -28,7 +28,9 @@ Vite + React, `react-globe.gl` (three.js). Scores/leaderboard via Supabase are t
 Database, anonymous + email auth, and Realtime for the leaderboard.
 
 1. In the Supabase SQL Editor run `supabase/01_schema.sql`, then `supabase/02_seed_countries.sql`.
-2. Authentication: enable anonymous sign-ins; set the Site URL / redirect URLs to where the app runs.
+2. Authentication: enable anonymous sign-ins, enable manual linking, and enable the GitHub provider
+   (GitHub OAuth app callback: `https://<project-ref>.supabase.co/auth/v1/callback`). Set the Site URL /
+   redirect URLs to where the app runs. Sign-in is GitHub-only, so no email is ever sent.
 3. Create `.env.local` (never commit it):
 
 ```

@@ -19,6 +19,7 @@ import {
   ensureSession,
   fetchCountries,
   fetchRank,
+  recoverFromExistingIdentity,
   saveDisplayName,
   submitScore,
   subscribeToScores,
@@ -65,6 +66,11 @@ export default function App() {
         console.error('Could not load countries from Supabase, using local copy', e)
         setCountries(fallbackCountries)
       })
+  }, [])
+
+  // Back from a GitHub link that clashed with an existing account: sign in to it.
+  useEffect(() => {
+    if (backendEnabled) recoverFromExistingIdentity()
   }, [])
 
   // Track the auth user; no sign-in happens here (that is when a game starts).

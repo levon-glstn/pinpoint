@@ -28,31 +28,42 @@ export function ensureSession() {
 }
 
 // Calls back with the current user (or null) now and on every auth change,
-// including sign-ins completed from a magic link in another tab.
+// including sign-ins completed in another tab.
 export function watchUser(onUser) {
   supabase.auth.getSession().then(({ data }) => onUser(data.session?.user ?? null))
   const { data } = supabase.auth.onAuthStateChange((_event, session) => onUser(session?.user ?? null))
   return () => data.subscription.unsubscribe()
 }
 
-// Email magic link. A guest (anonymous user) is upgraded in place, so their
-// user_id and earlier scores are kept. Otherwise (no session yet, or the email
-// already belongs to an account, e.g. signing in on a new device) we send a
-// regular sign-in link, which also creates the account for a brand-new email.
-export async function sendMagicLink(email) {
-  const emailRedirectTo = window.location.origin
+// GitHub sign-in. A guest has the identity linked to their anonymous user, so
+// their user_id and scores are kept. Everyone else just signs in. Both redirect
+// the browser to GitHub and back, so this only returns if something failed.
+export async function signInWithGitHub() {
+  const redirectTo = window.location.origin
   const { data } = await supabase.auth.getSession()
-  if (data.session?.user.is_anonymous) {
-    const { error } = await supabase.auth.updateUser({ email }, { emailRedirectTo })
-    if (!error) return 'upgrade'
-    if (error.code !== 'email_exists') throw error
-  }
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo },
-  })
+  const { error } = data.session?.user.is_anonymous
+    ? await supabase.auth.linkIdentity({ provider: 'github', options: { redirectTo } })
+    : await supabase.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })
   if (error) throw error
-  return 'signin'
+}
+
+// If a guest tried to link a GitHub account that already has an account (e.g.
+// signing in on a new device after playing as a guest), Supabase redirects back
+// with `identity_already_exists`. Sign in to that existing account instead,
+// once, so it can't loop. Returns true when it redirected.
+export function recoverFromExistingIdentity() {
+  const params = new URLSearchParams(window.location.hash.slice(1) + '&' + window.location.search.slice(1))
+  if (params.get('error_code') !== 'identity_already_exists') {
+    sessionStorage.removeItem('pinpoint:oauth-retry') // a normal load: allow future retries
+    return false
+  }
+  history.replaceState(null, '', window.location.pathname)
+  if (sessionStorage.getItem('pinpoint:oauth-retry')) return false
+  sessionStorage.setItem('pinpoint:oauth-retry', '1')
+  supabase.auth
+    .signInWithOAuth({ provider: 'github', options: { redirectTo: window.location.origin } })
+    .catch((e) => console.error('GitHub sign-in retry failed', e))
+  return true
 }
 
 // Remember the leaderboard name on the account itself (auth user metadata), so a
@@ -61,6 +72,9 @@ export async function saveDisplayName(name) {
   const { error } = await supabase.auth.updateUser({ data: { display_name: name } })
   if (error) throw error
 }
+
+// Shown for a signed-in player: GitHub username if they used GitHub, else email.
+export const accountLabel = (user) => user?.user_metadata?.user_name || user?.email || 'Signed in'
 
 export function signOut() {
   return supabase.auth.signOut()

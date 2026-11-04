@@ -8,7 +8,14 @@ import {
 } from '../lib/geo.js'
 import { useCountUp } from '../lib/useCountUp.js'
 import { useEffect, useMemo, useState } from 'react'
-import { LEADERBOARD_SIZE, fetchTopScores, sendMagicLink, signOut, subscribeToScores } from '../lib/supabase.js'
+import {
+  LEADERBOARD_SIZE,
+  accountLabel,
+  fetchTopScores,
+  signInWithGitHub,
+  signOut,
+  subscribeToScores,
+} from '../lib/supabase.js'
 
 // Decorative emoji confetti ('pop', launched upwards) or rain ('rain', falling).
 // Rendered outside transformed/blurred parents so `fixed` means the viewport.
@@ -55,7 +62,7 @@ export function Intro({ best, onPlay, loading, onLeaderboard, onHelp, onAccount,
     <>
       {onAccount && (
         <button className="btn btn-ghost account-chip" onClick={onAccount}>
-          {user && !user.is_anonymous ? user.email : 'Sign in'}
+          {user && !user.is_anonymous ? accountLabel(user) : 'Sign in'}
         </button>
       )}
       <header className="intro-title">
@@ -233,7 +240,12 @@ function SaveScore({ onSave, onLeaderboard, onAccount, user }) {
   // A signed-in player already has an identity: reuse their saved name and only
   // ask when they have none yet (or want to change it). Guests get an optional field.
   const account = user && !user.is_anonymous ? user : null
-  const savedName = (account?.user_metadata?.display_name || localStorage.getItem('pinpoint:name') || '').trim()
+  const savedName = (
+    account?.user_metadata?.display_name ||
+    localStorage.getItem('pinpoint:name') ||
+    account?.user_metadata?.user_name || // GitHub username
+    ''
+  ).trim()
   const [name, setName] = useState(savedName)
   const [editing, setEditing] = useState(false)
   const askName = !account || !savedName || editing
@@ -300,21 +312,25 @@ function SaveScore({ onSave, onLeaderboard, onAccount, user }) {
   )
 }
 
+function GitHubMark() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+    </svg>
+  )
+}
+
 export function SignInModal({ user, onClose }) {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
-  const [kind, setKind] = useState('upgrade') // which email was sent
+  const [status, setStatus] = useState('idle') // idle | redirecting | error
   const [error, setError] = useState('')
   const account = user && !user.is_anonymous ? user : null
 
-  const submit = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
+  const github = async () => {
+    setStatus('redirecting')
     try {
-      setKind(await sendMagicLink(email.trim()))
-      setStatus('sent')
+      await signInWithGitHub() // redirects to GitHub; only returns on failure
     } catch (err) {
-      console.error('Could not send magic link', err)
+      console.error('GitHub sign-in failed', err)
       setError(err.message || 'Something went wrong.')
       setStatus('error')
     }
@@ -325,7 +341,7 @@ export function SignInModal({ user, onClose }) {
     body = (
       <>
         <p className="muted">Signed in as</p>
-        <b className="account-email">{account.email}</b>
+        <b className="account-email">{accountLabel(account)}</b>
         <p className="muted modal-note">Your scores are tied to this account on any device.</p>
         <div className="dock-row">
           <button
@@ -343,40 +359,17 @@ export function SignInModal({ user, onClose }) {
         </div>
       </>
     )
-  } else if (status === 'sent') {
-    body = (
-      <>
-        <p className="modal-note">
-          Check <b>{email.trim()}</b> for {kind === 'upgrade' ? 'a confirmation' : 'a sign-in'} link. Open it in this
-          browser to finish.
-        </p>
-        <button className="btn btn-primary" onClick={onClose} autoFocus>
-          Got it
-        </button>
-      </>
-    )
   } else {
     body = (
-      <form className="signin-form" onSubmit={submit}>
+      <div className="signin-form">
         <p className="muted modal-note">
-          Play as a guest or sign in with your email to keep your scores across devices. No password needed.
+          Play as a guest, or sign in to keep your scores across devices. Your guest scores come with you.
         </p>
-        <input
-          className="input"
-          type="email"
-          required
-          autoFocus
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          aria-label="Email"
-          disabled={status === 'sending'}
-        />
-        <button className="btn btn-primary" disabled={status === 'sending' || !email.trim()}>
-          {status === 'sending' ? 'Sending…' : 'Email me a link'}
+        <button className="btn btn-primary oauth-btn" onClick={github} disabled={status === 'redirecting'} autoFocus>
+          <GitHubMark /> {status === 'redirecting' ? 'Opening GitHub…' : 'Continue with GitHub'}
         </button>
         {status === 'error' && <span className="save-error">{error}</span>}
-      </form>
+      </div>
     )
   }
 
