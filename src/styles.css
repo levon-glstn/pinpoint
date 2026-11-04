@@ -629,6 +629,10 @@ kbd {
   text-align: center;
 }
 
+.howto > .muted {
+  text-align: center;
+}
+
 .howto .btn {
   align-self: center;
 }
